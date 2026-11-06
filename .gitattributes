@@ -1,0 +1,11 @@
+# 出处校验按字节哈希，换行被改写就会误报「文件被修改」。
+# 因此统一锁成 LF，不允许任何自动转换。
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+*.woff2 binary

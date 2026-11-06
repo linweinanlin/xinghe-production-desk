@@ -1,0 +1,367 @@
+/* ============================================================
+   自动化工作流 · 市场化深色主题
+   品牌色：电光紫 #7C5CFF (PRIMARY) + 科技青 #00D4FF (ACCENT)
+   卡片化：12-14px 大圆角 + 柔和边框
+   ============================================================ */
+
+/* ---------- 全局 ---------- */
+QWidget {
+    color: #e7edf7;
+    font-family: "Microsoft YaHei UI", "Segoe UI";
+    font-size: 10pt;
+}
+QMainWindow, QWidget#workspace {
+    background: transparent;
+}
+
+/* ---------- 侧栏（半透明，让动态背景透出来）---------- */
+QFrame#sidebar {
+    background: rgba(14, 17, 24, 0.72);
+    border-right: 1px solid rgba(124, 92, 255, 0.15);
+}
+QLabel#brand {
+    font-size: 15pt;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0.3px;
+}
+QLabel#brandEn {
+    color: #6B7280;
+    font-size: 8pt;
+}
+QLabel#sectionCaption {
+    color: #6B7280;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ---------- 标题 ---------- */
+QLabel#pageTitle {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+QLabel#muted {
+    color: #A0A8B8;
+    font-size: 9pt;
+}
+
+/* ---------- 状态徽章 ---------- */
+QLabel#badge {
+    background: rgba(124, 92, 255, 0.12);
+    color: #A594FF;
+    border: 1px solid rgba(124, 92, 255, 0.35);
+    border-radius: 12px;
+    padding: 5px 14px;
+    font-size: 8pt;
+    font-weight: 700;
+    font-family: "Segoe UI";
+}
+
+/* ---------- 通用按钮 ---------- */
+QPushButton {
+    background: #1C2130;
+    color: #D0D8E8;
+    border: 1px solid #2E3547;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 9pt;
+}
+QPushButton:hover {
+    background: #252C3D;
+    border-color: #3E4660;
+    color: #FFFFFF;
+}
+QPushButton:pressed {
+    background: #161A23;
+}
+QPushButton:disabled {
+    color: #5A6274;
+    background: #161A23;
+    border-color: #232838;
+}
+
+/* ---------- 侧栏导航按钮 ---------- */
+QPushButton#nav {
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 14px 14px;
+    font-size: 10pt;
+    color: #A0A8B8;
+}
+QPushButton#nav:hover {
+    background: rgba(124, 92, 255, 0.08);
+    color: #FFFFFF;
+    border-color: rgba(124, 92, 255, 0.2);
+}
+QPushButton#nav:checked {
+    color: #FFFFFF;
+    background: rgba(124, 92, 255, 0.15);
+    border: 1px solid rgba(124, 92, 255, 0.4);
+}
+
+/* ---------- Ghost 小按钮 ---------- */
+QPushButton#ghost {
+    background: transparent;
+    color: #9B9FB0;
+    border-color: #2E3547;
+    padding: 6px 12px;
+    font-size: 9pt;
+    border-radius: 8px;
+}
+QPushButton#ghost:hover {
+    background: rgba(0, 212, 255, 0.08);
+    color: #00D4FF;
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* ---------- Primary 主按钮 ---------- */
+QPushButton#primary {
+    background: #7C5CFF;
+    border: 1px solid #9B7FFF;
+    color: white;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14pt;
+    font-weight: 700;
+}
+QPushButton#primary:hover {
+    background: #8F70FF;
+    border-color: #B89FFF;
+}
+QPushButton#primary:pressed {
+    background: #6A4AE0;
+}
+QPushButton#primary:disabled {
+    color: rgba(255, 255, 255, 0.4);
+    background: #3A2D6B;
+    border-color: #4A3A85;
+}
+
+/* ---------- Stop 按钮 ---------- */
+QPushButton#stop {
+    color: #FCA5A5;
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.35);
+}
+QPushButton#stop:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.55);
+}
+
+/* ---------- Mode 切换按钮 ---------- */
+QPushButton#mode {
+    padding: 6px 14px;
+    background: transparent;
+    border-color: transparent;
+    color: #6B7280;
+    border-radius: 8px;
+    font-size: 9pt;
+}
+QPushButton#mode:hover {
+    color: #D0D8E8;
+    background: #1C2130;
+}
+QPushButton#mode:checked {
+    color: #FFFFFF;
+    background: rgba(124, 92, 255, 0.15);
+    border: 1px solid rgba(124, 92, 255, 0.35);
+}
+
+/* ---------- 卡片容器 ---------- */
+QFrame#card {
+    background: #161A23;
+    border: 1px solid #252B38;
+    border-radius: 14px;
+}
+QLabel#cardTitle {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+QLabel#cardIndex {
+    color: #A594FF;
+    background: rgba(124, 92, 255, 0.15);
+    border-radius: 6px;
+    font-family: "Consolas";
+    padding: 3px 8px;
+    font-size: 9pt;
+    border: 1px solid rgba(124, 92, 255, 0.25);
+}
+
+/* ---------- 路径条 ---------- */
+QFrame#pathbar {
+    background: #161A23;
+    border: 1px solid #252B38;
+    border-radius: 12px;
+}
+
+/* ---------- 输入控件 ---------- */
+QLineEdit, QComboBox, QDoubleSpinBox {
+    background: #1C2130;
+    color: #FFFFFF;
+    border: 1px solid #2E3547;
+    border-radius: 8px;
+    padding: 7px 10px;
+    selection-background-color: #7C5CFF;
+}
+QLineEdit:focus, QComboBox:focus, QDoubleSpinBox:focus {
+    border-color: #7C5CFF;
+}
+QPlainTextEdit {
+    background: #1C2130;
+    color: #FFFFFF;
+    border: 1px solid #2E3547;
+    border-radius: 8px;
+}
+QComboBox::drop-down {
+    width: 24px;
+    border-left: 1px solid #2E3547;
+}
+QComboBox QAbstractItemView {
+    background: #161A23;
+    color: #FFFFFF;
+    selection-background-color: rgba(124, 92, 255, 0.25);
+    border: 1px solid #2E3547;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+/* ---------- Slider 滑块 ---------- */
+QSlider::groove:horizontal {
+    height: 4px;
+    border-radius: 2px;
+    background: #2E3547;
+}
+QSlider::sub-page:horizontal {
+    background: #7C5CFF;
+    border-radius: 2px;
+}
+QSlider::handle:horizontal {
+    background: #FFFFFF;
+    border: 3px solid #7C5CFF;
+    width: 12px;
+    height: 12px;
+    margin: -7px 0;
+    border-radius: 9px;
+}
+
+/* ---------- Checkbox 开关 ---------- */
+QCheckBox {
+    spacing: 10px;
+    padding: 5px 0;
+    color: #C0C8D8;
+}
+QCheckBox::indicator {
+    width: 30px;
+    height: 16px;
+    border: 1px solid #2E3547;
+    border-radius: 8px;
+    background: #1C2130;
+}
+QCheckBox::indicator:checked {
+    background: #7C5CFF;
+    border-color: #9B7FFF;
+    image: none;
+}
+
+/* ---------- Value 数值 ---------- */
+QLabel#value {
+    color: #00D4FF;
+    font-family: "Consolas";
+    font-weight: 700;
+}
+
+/* ---------- 滚动区 ---------- */
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+QScrollArea > QWidget > QWidget {
+    background: transparent;
+}
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: #2E3547;
+    border-radius: 4px;
+    min-height: 30px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: transparent;
+}
+
+/* ---------- 预览区 ---------- */
+QFrame#previewArea {
+    background: #090D14;
+    border: 1px solid #252B38;
+    border-radius: 14px;
+}
+QLabel#previewHint {
+    color: #6B7280;
+    font-size: 8pt;
+}
+
+/* ---------- 控制台 ---------- */
+QPlainTextEdit#console {
+    background: #070B0D;
+    color: #6EE7B7;
+    font-family: "Cascadia Mono", "Consolas";
+    font-size: 9pt;
+    border: 1px solid #1F3A30;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ---------- 进度条 ---------- */
+QProgressBar {
+    background: #1C2130;
+    border: none;
+    border-radius: 4px;
+    height: 6px;
+    color: transparent;
+}
+QProgressBar::chunk {
+    background: #7C5CFF;
+    border-radius: 4px;
+}
+
+/* ---------- Splitter ---------- */
+/* ---------- Stack / Splitter ---------- */
+QStackedWidget { background: transparent; }
+QStackedWidget > QWidget { background: transparent; }
+QSplitter::handle {
+    background: #0B0D12;
+    width: 14px;
+}
+
+/* ---------- Tooltip ---------- */
+QToolTip {
+    color: #FFFFFF;
+    background: #161A23;
+    border: 1px solid #2E3547;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+/* ---------- 对话框 ---------- */
+QMessageBox {
+    background: #161A23;
+}
+
+/* ---------- 状态栏 ---------- */
+QStatusBar {
+    background: #0E1118;
+    color: #6B7280;
+    border-top: 1px solid #252B38;
+}

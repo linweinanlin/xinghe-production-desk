@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <!-- 星河制片台 (Xinghe Production Desk) · 溯源标记 XHPD-2026-7f3c91a4d0e5b28c
+       Copyright (c) 2026 linweinanlin. 源码可见，复制需授权，详见仓库根目录 LICENSE。
+       在这个文件里看到上面这串标记，说明这份前端产物来自本仓库。 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="linweinanlin">
+  <meta name="copyright" content="Copyright (c) 2026 linweinanlin. 源码可见，复制需授权。">
+  <meta name="description" content="星河制片台：从文字到镜头，把创作变成可控生产。本机运行、自带模型配置，项目到交付一条链路。">
+  <title>星河制片台 · 商业工作台</title>
+  <link rel="icon" type="image/png" href="./assets/app-icon.png">
+  <link rel="apple-touch-icon" href="./assets/app-icon.png">
+  <link rel="stylesheet" href="./assets/styles.css?v=20261102-39">
+  <link rel="stylesheet" href="./assets/refresh.css?v=20261105-05">
+  <link rel="stylesheet" href="./assets/model-config.css?v=20261105-10">
+</head>
+<body>
+  <div id="app" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json" hidden>
+  <input id="asset-image-file" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+  <script src="./assets/storyboard-core.js?v=20261102-16" defer></script>
+  <script src="./assets/provider-capabilities.js?v=20261104-01" defer></script>
+  <script src="./assets/provider-schema.js?v=20261105-10" defer></script>
+  <script src="./assets/app.js?v=20261106-11" defer></script>
+</body>
+</html>

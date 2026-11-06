@@ -1,0 +1,29 @@
+# 密钥与本地配置：绝不提交
+.env.models.local
+.env
+*.local
+
+# 运行产物
+.cache/
+startup.log
+web/generated/
+deliveries/
+*.log
+
+# 签名私钥（正常情况在 ~/.xinghe/ 下，这里再兜一层）
+seal-key.json
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-broken-py314/
+venv/
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

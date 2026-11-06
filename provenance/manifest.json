@@ -1,0 +1,150 @@
+{
+ "files": {
+  "LICENSE": {
+   "sha256": "5bb23294caf3d0e813eaff34f6c43d2c3979db02232d06a4526f6df44d555885",
+   "size": 10992
+  },
+  "LICENSES/AI-Drama-Pipeline-MIT.txt": {
+   "sha256": "c0f503728286e61c0ffe655fbd958f74a756053bfd63b59d656dbbe86e4c7347",
+   "size": 1087
+  },
+  "NOTICE": {
+   "sha256": "218f4066a494ba497e497aee8594d9209e565c7fb97719e0f55a6e5fa4071117",
+   "size": 2786
+  },
+  "THIRD_PARTY_NOTICES.md": {
+   "sha256": "a7761cc4a19863194c993d93312af3c12a9656c6d11e1428848095b78817b119",
+   "size": 2562
+  },
+  "app.py": {
+   "sha256": "d9a9b5ab9c35f27869fb7b383b1625fd93f1098dc468685740b98328355c8b16",
+   "size": 28652
+  },
+  "assets/app-icon.ico": {
+   "sha256": "297809aa7ee50e8df48af4d54d5d554c8df6fee4ffbcffa34a5f83c4bde84500",
+   "size": 117526
+  },
+  "assets/app-icon.png": {
+   "sha256": "4fe728faf2b37078ddb68c1ad1e7c9d8848278d1c609bd2935b18726668a4792",
+   "size": 218930
+  },
+  "director_server.py": {
+   "sha256": "e7e0b652605968d728d45e718152902ecf0d018bd98911f74ef4c87ad5ef089b",
+   "size": 149913
+  },
+  "inpainting.py": {
+   "sha256": "8cf0218ba89c11c9b9cd9afa95b5f709470078a4c440633eab897886eeeb5e6a",
+   "size": 6572
+  },
+  "launch.py": {
+   "sha256": "d4434179fb0783b15110aed1fc60b98ce13100ddf1fdb42230c3c0dd46d52a99",
+   "size": 1445
+  },
+  "post_production.py": {
+   "sha256": "4ae80f26184bc017b7fd64659a2c5d15d057fc377bbcf811526c708b54b6122d",
+   "size": 57868
+  },
+  "provenance/__init__.py": {
+   "sha256": "ef90bf0359cc1580130dff62d9dc3e3086bd805ed3273f3b1a7e0db42d4fb027",
+   "size": 170
+  },
+  "provenance/author.py": {
+   "sha256": "ad0c8d4b52969ee48033b97b45b8807a984bca4fd67608db10da6e42db0f5f53",
+   "size": 1731
+  },
+  "provenance/guard.py": {
+   "sha256": "4b1c3cd8586b0d9d09685e0b0a7150ed01989e4d75898bc18044b2e30ddb4073",
+   "size": 11088
+  },
+  "requirements.txt": {
+   "sha256": "291931e448334dad46f8cea2eb1da9b552d9e9919f8ada16ff26e8e8d99b1ee1",
+   "size": 325
+  },
+  "sfx_library.py": {
+   "sha256": "282f98f6c11d1cc62b92ddeb5045aff923689a199e4865db4c56206ebd97e5b2",
+   "size": 16433
+  },
+  "styles.qss": {
+   "sha256": "bfb2456d9ddcf82c0824edc21a36e81c20014aea8ef9b07fe21b520920b7b749",
+   "size": 8013
+  },
+  "tools/import-workspace.py": {
+   "sha256": "e28770fffdfa2ac07a26ec050c3cf48543602605be6831723ebcdbf245b09b03",
+   "size": 11141
+  },
+  "tools/keygen.py": {
+   "sha256": "0b37fb96a1b459fafe6610b0909a435b44e9096ce12829bad79da25b76cfcb76",
+   "size": 3790
+  },
+  "tools/seal.py": {
+   "sha256": "d9a4484c98ffac73e8512d363df0014df4914b2cf8eba6618bfaa45745f2a848",
+   "size": 3017
+  },
+  "tools/set-author.py": {
+   "sha256": "bfaab195cb8240d7f7fe5c83f1ae47249efdc3bb8db1904174721700f6ef363a",
+   "size": 3392
+  },
+  "tools/ui_settings_probe.js": {
+   "sha256": "e2ee68b2d9a9ab1a8bc82503091f2f3d9a8794b7796692b9cb36ec9e82a02ec7",
+   "size": 22182
+  },
+  "web/assets/app-icon.png": {
+   "sha256": "b2bb8ff38088beeeca67618f7e605e5ce13888067cd5e823247f2e992fcfdbfd",
+   "size": 74005
+  },
+  "web/assets/app.js": {
+   "sha256": "2c9c03b81bd1779149beedc88e71b5d634ab18005731967ed8e468b924ea95f1",
+   "size": 430293
+  },
+  "web/assets/hero-art.jpg": {
+   "sha256": "ca18eb2f6e8286c7d68c5c02e4372b74638a0474048349d4667df514f9f50a6c",
+   "size": 136164
+  },
+  "web/assets/model-config.css": {
+   "sha256": "ee90de335922e7a461905fa9ad90859a7bf543d03ef7fb4a8e7192faeaabd21c",
+   "size": 9696
+  },
+  "web/assets/provider-capabilities.js": {
+   "sha256": "048fd5414fc78b6f31d70be10e8b1707c3bdfea7a677a5ccf39d05750fa616c7",
+   "size": 3263
+  },
+  "web/assets/provider-schema.js": {
+   "sha256": "bf7673a1508031693dd67301adcc3054d4266adbbe3f88f83fcfe19cac58e4cb",
+   "size": 81954
+  },
+  "web/assets/refresh.css": {
+   "sha256": "8d01a6221d9750c8e1fd10bf18a889ccb30e6eeb6537f72e0a980580d485f7b3",
+   "size": 22484
+  },
+  "web/assets/storyboard-core.js": {
+   "sha256": "2c9421483f82c08342c5ad00138df1dfa274b58acade1c8db290c0d8dbb11a98",
+   "size": 22537
+  },
+  "web/assets/styles.css": {
+   "sha256": "6358e4f3218b834268dc0cd2a2cbad456994d2bd05d1ae04b09cbcb5880c8930",
+   "size": 47178
+  },
+  "web/index.html": {
+   "sha256": "e1c006b294b63796070e1ddf5344b0e12d443100d00b1082aa94fa82029ce37b",
+   "size": 1818
+  },
+  "启动星河制片台.bat": {
+   "sha256": "b707e22720b2bed14119f60e1a0d4990d16c0f1da609b8f0a44dca73a95c1772",
+   "size": 530
+  }
+ },
+ "meta": {
+  "algorithm": "RSASSA-PKCS1-v1_5 / SHA-256",
+  "author": "linweinanlin",
+  "canary": "XHPD-2026-7f3c91a4d0e5b28c",
+  "fingerprint": "4284e68dd05c",
+  "homepage": "https://github.com/linweinanlin/xinghe-production-desk",
+  "license": "Xinghe Source-Available License 1.0",
+  "note": "清单覆盖 web/ 与后端源码；改任何字节都会让签名对不上。",
+  "product": "星河制片台",
+  "product_en": "Xinghe Production Desk",
+  "sealed_at": "2026-11-06T11:17:57+08:00",
+  "version": "2.0.0"
+ },
+ "signature": "b4f34687eb8a9e65d470e3b4d673c49ba7fca5686c6c0e39721dade27db26fb1362bb478d1d2e514c3d0ed4a559434bb2a3fa877188d11dc0ea7a423f0e35d539a38fcedc0d8e44263b994787ccbd33ea1e9a448d00c0bd24b35c2a22f062d23187d636bae552ba19cf29c545648e2836fd2b99186c4031a257785cd58a3ef0509b55e6f839e87df1e14588c66f2921b2426382d824daec50871ab1d85c8de6765cc6f55c0ba54f4aa79988914c3685a1cbb69318440956e8be04c518cff13bcc6b8260fc9ff58431ec0dd83e8c0320d8ace03f225c5aa7d5303aeb9675cbfce395342c1c7e0ad33608dece3b242670431dfef56f2451b794cf4e8ce577849ca"
+}

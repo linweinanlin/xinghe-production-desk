@@ -1,0 +1,337 @@
+/* ============================================================
+   星河制片台 · 模型与设置（四级层级：模块 → 服务商 → 模型 → 参数）
+   只服务设置页的 .cfg-* 结构，沿用 refresh.css 的主题变量。
+   ============================================================ */
+
+.cfg-wrap {
+  display: grid;
+  grid-template-columns: 268px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+/* ---------- 左：层级树 ---------- */
+.cfg-tree {
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+}
+.cfg-tree-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cfg-tree-body { overflow-y: auto; padding: 6px; }
+
+.cfg-module {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.cfg-module:hover { background: rgba(255, 255, 255, .04); }
+.cfg-module.on { background: rgba(61, 214, 196, .1); color: var(--cyan); }
+.cfg-module .cfg-count { margin-left: auto; }
+
+.cfg-caret {
+  width: 10px;
+  font-size: 9px;
+  color: var(--muted);
+  transition: transform .16s ease;
+  display: inline-block;
+}
+.cfg-caret.closed { transform: rotate(-90deg); }
+
+.cfg-branch-group + .cfg-branch-group { margin-top: 2px; }
+
+.cfg-branch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px 5px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--soft);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+.cfg-branch:hover { background: rgba(255, 255, 255, .04); }
+.cfg-branch.on { background: rgba(61, 214, 196, .1); color: var(--cyan); }
+.cfg-branch.active .cfg-branch-label::after {
+  content: "在用";
+  margin-left: 6px;
+  font-size: 9px;
+  color: var(--green);
+  border: 1px solid rgba(63, 185, 80, .35);
+  border-radius: 99px;
+  padding: 0 4px;
+}
+.cfg-branch-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cfg-dot { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+.cfg-dot.ok { background: var(--green); }
+.cfg-dot.warn { background: var(--orange); }
+.cfg-tag {
+  font-size: 9px;
+  padding: 0 4px;
+  border-radius: 99px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  flex: none;
+}
+.cfg-count {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.cfg-leaves { padding: 1px 0 4px 12px; }
+.cfg-leaf {
+  width: 100%;
+  display: block;
+  padding: 3px 8px 3px 22px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cfg-leaf:hover { background: rgba(255, 255, 255, .04); color: var(--text); }
+.cfg-leaf.on { background: rgba(61, 214, 196, .12); color: var(--cyan); }
+.cfg-leaf.now::after { content: " · 在用"; color: var(--green); }
+
+/* ---------- 右：编辑区 ---------- */
+.cfg-main { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.cfg-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cfg-head h4 { margin: 2px 0 4px; font-size: 16px; }
+.cfg-crumb { font-size: 11px; color: var(--muted); letter-spacing: .02em; }
+.cfg-head .actions { flex: none; }
+
+.cfg-card { padding: 14px 16px; }
+.cfg-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.cfg-card-head h4 { margin: 0; font-size: 13px; }
+.cfg-card-head .hint { margin: 0; }
+
+.cfg-columns {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+@media (max-width: 1180px) { .cfg-columns { grid-template-columns: minmax(0, 1fr); } }
+
+/* 参数行 */
+.cfg-rows { display: flex; flex-direction: column; }
+.cfg-row { padding: 9px 0; border-bottom: 1px dashed rgba(48, 54, 61, .7); }
+.cfg-row:last-child { border-bottom: 0; padding-bottom: 2px; }
+.cfg-row:first-child { padding-top: 2px; }
+.cfg-row-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--soft);
+  margin-bottom: 5px;
+}
+.cfg-row-label code {
+  font-size: 10px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, .05);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+.cfg-row-control { display: flex; align-items: center; gap: 8px; }
+.cfg-row-control > .field, .cfg-row-control > select, .cfg-row-control > input { flex: 1; min-width: 0; }
+.cfg-row-help { margin: 5px 0 0; font-size: 10px; color: var(--muted); line-height: 1.5; }
+
+.cfg-flag {
+  font-size: 9px;
+  padding: 0 5px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.cfg-flag.on { color: var(--cyan); border-color: rgba(61, 214, 196, .4); background: rgba(61, 214, 196, .08); }
+
+.cfg-boolean { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; color: var(--soft); }
+.cfg-boolean input { width: 14px; height: 14px; accent-color: var(--cyan); }
+.cfg-readonly {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 9px;
+}
+
+/* 能力只读表 */
+.cfg-capability { display: flex; flex-direction: column; }
+.cfg-cap-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(48, 54, 61, .7);
+  font-size: 11.5px;
+}
+.cfg-cap-row:last-child { border-bottom: 0; }
+.cfg-cap-row span { color: var(--muted); }
+.cfg-cap-row b { font-weight: 600; text-align: right; }
+
+/* 模型网格 */
+.cfg-models { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
+.cfg-model-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .02);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.cfg-model-chip:hover { border-color: rgba(61, 214, 196, .45); }
+.cfg-model-chip.on { border-color: rgba(61, 214, 196, .6); background: rgba(61, 214, 196, .09); }
+.cfg-model-chip b { font-size: 11.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.cfg-model-chip small { font-size: 10px; color: var(--muted); line-height: 1.45; }
+
+/* 模块总览表 */
+.cfg-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 12px; }
+.cfg-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+}
+.cfg-table td { padding: 8px; border-bottom: 1px solid rgba(48, 54, 61, .6); vertical-align: middle; }
+.cfg-table .mono {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 10.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cfg-table .cfg-active-row > td { background: rgba(61, 214, 196, .045); }
+.cfg-provider-cell small { display: block; font-size: 9.5px; color: var(--muted); font-family: var(--mono, monospace); }
+.cfg-provider-link {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.cfg-provider-link:hover { color: var(--cyan); }
+.cfg-chip-row > td { padding: 0 8px 8px; border-bottom: 1px solid rgba(48, 54, 61, .6); }
+.cfg-mini-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.cfg-mini-chip {
+  font-family: var(--mono, monospace);
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .02);
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.cfg-mini-chip:hover { color: var(--text); border-color: rgba(61, 214, 196, .45); }
+.cfg-mini-chip.on { color: var(--cyan); border-color: rgba(61, 214, 196, .5); background: rgba(61, 214, 196, .1); }
+
+/* 校验与提示 */
+.cfg-issues { display: flex; flex-direction: column; gap: 6px; }
+.cfg-issue {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 11.5px;
+  color: var(--soft);
+  line-height: 1.5;
+}
+.cfg-issue > span {
+  flex: none;
+  font-size: 9px;
+  font-weight: 800;
+  border-radius: 99px;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.cfg-issue.err > span { color: var(--red); border-color: rgba(248, 81, 73, .45); background: rgba(248, 81, 73, .08); }
+.cfg-issue.warn > span { color: var(--orange); border-color: rgba(210, 153, 34, .45); background: rgba(210, 153, 34, .08); }
+.cfg-issue.ok > span { color: var(--green); border-color: rgba(63, 185, 80, .45); background: rgba(63, 185, 80, .08); }
+
+.cfg-note {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.cfg-note code {
+  font-family: var(--mono, monospace);
+  background: rgba(255, 255, 255, .05);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+.cfg-note.warn {
+  color: var(--orange);
+  border: 1px dashed rgba(210, 153, 34, .35);
+  border-radius: 7px;
+  padding: 8px 10px;
+  background: rgba(210, 153, 34, .05);
+}

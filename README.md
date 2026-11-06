@@ -101,9 +101,20 @@ TENCENTCLOUD_SECRET_KEY=
 │   ├── set-author.py       一次性替换作者占位符
 │   ├── import-workspace.py 从另一个安装导入项目、配置与媒体
 │   └── ui_settings_probe.js 「模型与设置」界面回归探针
+├── tests/
+│   └── test_core.py        出处校验 / 层级表 / 契约测试（12 项）
 ├── LICENSE / NOTICE / THIRD_PARTY_NOTICES.md
 └── requirements.txt
 ```
+
+### 测试与回归
+
+```bash
+python -m unittest discover -s tests -v      # 12 项：签名清单、伪造签名被拒、层级表规模与描述符合法性、密钥与忽略规则
+node tools/ui_settings_probe.js http://127.0.0.1:端口/index.html   # 41 项：真浏览器点击、越界拦截、迁移、切通道
+```
+
+界面探针会真改工作区配置，跑之前先备份 `.cache/commercial-director-workspace.json`。
 
 ## 4. 架构要点
 
